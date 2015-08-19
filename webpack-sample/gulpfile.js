@@ -8,10 +8,6 @@ gulp.task('html', function () {
         .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('msg', ['html'], function() {
-    console.log('html copy done!');
-});
-
 gulp.task('watch', function() {
     gulp.watch('./src/**', ['html'])
 });
@@ -22,6 +18,7 @@ gulp.task('webserver', function() {
         webserver({
             directoryListing: {
                 enable:true,
+                port: 22222,
                 path: 'dist'
             },
             livereload: true
