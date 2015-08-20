@@ -16,9 +16,9 @@ gulp.task('webserver', function() {
     gulp.src('./dist')
         .pipe(
         webserver({
+            port: 22222,
             directoryListing: {
                 enable:true,
-                port: 22222,
                 path: 'dist'
             },
             livereload: true
