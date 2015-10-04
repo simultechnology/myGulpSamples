@@ -1,0 +1,84 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css"/>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+    <style type="text/css">
+        <!--
+        #map {
+            height: 90%;
+        }
+        -->
+    </style>
+</head>
+<body>
+<div style="line-height: 30px;">
+    ZDC地図の透明度
+    <input type="range" value="0" id="alpha-range" onchange="changeAlphaRange(this)">
+    <input type="text" value="0" style="width: 30px;" id="alpha-value" onchange="changeAlphaValue(this)">%
+</div>
+<div id="map"></div>
+<script>
+
+
+    var zdcLayer = L.tileLayer.wms("http://210.133.109.147/m_wms/104/20150927/00010/122/22/cgi-bin/glaf/glaf_get_map_wms.cgi", { //for Retina
+        layers: 'basic',
+        format: 'image/png',
+        transparent: false,
+        version: '1.1.1',
+        //srs:'epsg:4326',
+        srs: 'epsg:3857',
+        height: '512',
+        width: '512'
+    });
+
+//    var googlemap = L.tileLayer.wms("http://www.finds.jp/ws/kiban25000wms.cgi?", {
+//        layers: 'KBN25000ANF-900913-L',
+//        format: 'image/png',
+//        transparent: true,
+//        attribution: "Weather data © 2012 IEM Nexrad",
+//        srs: 'epsg:3857',
+//        height: '256',
+//        width: '256',
+//        opacity: 0.5
+//    });
+
+    var googleLayer = L.tileLayer(
+            'http://mt{s}.google.com/vt/lyrs=m@121&hl=ja&x={x}&y={y}&z={z}',
+            {
+                subdomains: [0, 1, 2, 3]
+            }
+    );
+
+    var map = L.map('map', {
+
+        center: [35.3622222, 138.7313889], zoom: 8,
+        layers: [googleLayer, zdcLayer]
+    });
+    //var office = L.marker([35.6614,139.7543]).addTo(map);
+    //office.bindPopup("DTS CORPORATION HQ").openPopup();
+    //
+    // map.setView([35.3622222, 138.7313889], 8);
+    //
+
+
+    map.on('click', function (e) {
+        var latitude = (Math.round(e.latlng.lat * 10000)) / 10000;
+        var longitude = (Math.round(e.latlng.lng * 10000)) / 10000;
+        alert("緯度:" + latitude + " , " + "経度:" + longitude);
+    });
+
+    function changeAlphaRange(val) {
+        var alpha = Number(val.value) / 100.0;
+        var alphaTextForm = document.getElementById('alpha-value');
+        alphaTextForm.setAttribute('value', val.value);
+        zdcLayer.setOpacity(1 - alpha);
+    }
+
+    function changeAlphaValue(val) {
+        var alpha = Number(val.value) / 100.0;
+        zdcLayer.setOpacity(alpha);
+    }
+</script>
+</body>
+</html>

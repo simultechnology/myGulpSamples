@@ -20,7 +20,7 @@ gulp.task('webserver', function() {
     gulp.src('./dist')
         .pipe(
         webserver({
-            port: 41111,
+            port: 60011,
             directoryListing: {
                 enable:true,
                 path: 'dist'

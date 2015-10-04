@@ -44,8 +44,35 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
+	__webpack_require__(1);
+	module.exports = __webpack_require__(3);
+
+
+/***/ },
+/* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
 	//document.write("It works.");
-	document.write(__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./content.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())));
+	var content = __webpack_require__(2);
+	document.writeln(content.value + "<br>");
+	document.writeln("chara length : " + content.getLength() + "<br>");
+
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+	module.exports.value = "It works from content.js.";
+	module.exports.getLength = function () {
+	    return this.value.length;
+	}
+
+
+/***/ },
+/* 3 */
+/***/ function(module, exports) {
+
+	document.writeln("other-content");
 
 /***/ }
 /******/ ]);

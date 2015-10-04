@@ -1,2 +1,4 @@
 //document.write("It works.");
-document.write(require("./content.js"));
+var content = require("./content.js");
+document.writeln(content.value + "<br>");
+document.writeln("chara length : " + content.getLength() + "<br>");
