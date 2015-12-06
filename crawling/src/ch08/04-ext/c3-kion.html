@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+  <!-- ライブラリの取り込み -->
+  <link href="lib/c3/c3.min.css" rel="stylesheet" type="text/css">
+  <script src="lib/d3.min.js"></script>
+  <script src="lib/c3/c3.min.js"></script>
+  <!-- 気温データ -->
+  <script src="2014kion-sma.js"></script>
+</head><body>
+<div id="chart" style="width:800px; height:400px;"></div>
+<script>
+// 気温データを変換 ----- (※1)
+var tempdata_c3 = [],
+    labels = ["x"], temp = ["気温"], sma = ["指数"];
+for (var i in kion_data) {
+  var x = kion_data[i];
+  labels.push(new Date("2014/"+x[0]));
+  temp.push(x[1]);
+  sma.push(x[2]);
+}
+tempdata_c3 = [labels, temp, sma];
+
+// グラフの描画 ---------- (※2)
+var chart = c3.generate({
+  bindto: '#chart',
+  data: {
+    x: 'x',
+    columns: tempdata_c3
+  },
+  axis: { // ------------(※3)
+    x: {
+      type: 'timeseries',
+      tick: { format: '%m/%d' }
+    }
+  },
+  grid: {
+    x: { show: false },
+    y: { show: true }
+  },
+  point: { show: false }
+});
+</script>
+</body></html>

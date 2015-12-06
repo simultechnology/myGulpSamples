@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"></head><body>
+<!-- D3.jsを取り込み -->
+<script type="text/javascript" src="./d3.min.js"></script>
+<script>
+  // データの一覧
+  var dataset = [30, 25, 44, 21, 30, 50];
+
+  // 描画領域を作る
+  var svg_width = 600, svg_height = 400;
+  var svg = d3.select("body")
+    .append("svg")
+    .attr( {"width":svg_width, "height":svg_height});
+
+  // スケール自動計算用 ---- (*1)
+  var x_scale = d3.scale.linear()
+    .domain([0, d3.max(dataset)]) // データの幅      ---- (*2)
+    .range([0, svg_width]);       // 実際の描画サイズ ---- (*3)
+  
+  // バーの高さを計算
+  var bar_h = svg_height / dataset.length;
+
+  // グラフを描画する
+  svg.selectAll("rect")
+    .data(dataset)
+    .enter()
+    .append("rect")
+    .attr({
+      x      : 0,
+      width  : function(d, i) { return x_scale(d); }, // ----(*4)
+      y      : function(d, i) { return i * bar_h; },
+      height : bar_h - 5,
+      fill   : "blue"
+    });
+</script>
+</body></html>
+

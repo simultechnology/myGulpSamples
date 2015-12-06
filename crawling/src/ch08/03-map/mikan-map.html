@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+.place-label {
+  font-size: 9px;
+  fill: black;
+}
+.area {
+  stroke: none;
+  stroke-linejoin: round;
+}
+</style>
+<body>
+<!-- ライブラリの取り込み -->
+<script src="d3.v3.min.js"></script>
+<script src="topojson.v0.min.js"></script>
+<script>
+
+var width = 1024, height = 800;
+var scale = 3000,
+    cx = 137.5, cy = 35.405;
+
+// 地図データとミカンデータの変数
+var map_o = null, geo = null;
+var mikan = null, max_value = 0;
+
+// 色の変化を定義したもの
+var color_list = [
+  "#ddd", "#ffe", "#fec",
+  "#fc9", "#fa9", "#f88", "#f77"
+];
+
+// SVG領域を作成
+var svg = d3.select("body")
+  .append("svg")
+  .attr({"width":width, "height":height})
+  .style({"border":"1px solid silver"});
+
+// CSVファイルの読み込み --- (*1)
+d3.csv("mikan.csv", function(err, data) {
+  mikan = {};
+  for (var i in data) {
+    var area = data[i].area;
+    var value = parseInt(data[i].value);
+    if (value > max_value) max_value = value;
+    mikan[area] = value;
+  }
+  drawData();
+});
+// 地図データの読込 ---- (*2)
+d3.json("japan-topo.json", function(err, map) {
+  // 描画オブジェクトを得る
+  geo = map.objects["japan-geo"];
+  map_o = topojson.object(map, geo);
+  drawData();
+});
+
+// 画面描画 ---- (*3)
+function drawData() {
+  // 読み込み待ちする
+  if (mikan == null || map_o == null) return;
+
+  // 色の自動計算 --- (*4)
+  var color_scale = d3.scale.quantize()
+    .domain([0, max_value])
+    .range(color_list);
+
+  // 縮尺を指定
+  var projection = d3.geo.mercator()
+        .center([cx, cy])
+        .scale(scale)
+        .translate([width / 2, height / 2]);
+  
+  // パスを作成
+  var path = d3.geo.path()
+    .projection(projection);
+
+  // SVGに追加
+  svg.append("path")
+     .datum(map_o)
+     .attr("d", path);
+
+  // 色を塗る ------- (*5)
+  svg.selectAll(".area")
+     .data(map_o.geometries)
+     .enter()
+      .append("path")
+      .attr("class", "area")
+      .attr("fill", function(d) { // ---- (*4)
+        var area = d.properties.name_local;
+        if (area == null) return;
+        var value = mikan[area];
+        if (value == undefined) value = 0;
+        var c = color_scale(value);
+        console.log(area, value, c);
+        return c;
+      })
+      .attr("d", path);
+
+
+  // ラベルを作成
+  var labels = {};
+  svg.selectAll(".place-label")
+     .data(map_o.geometries)
+     .enter()
+       .append("g")
+       .attr("transform", function(d) {
+          return "translate(" + path.centroid(d) + ")";
+       })
+       .append("text")
+       .attr("text-anchor", "middle")
+       .attr("class", "place-label")
+       .text(function(d) {
+          var p = d.properties.name_local;
+          var v = mikan[p];
+          if (v == 0 || v == undefined) return;
+          if (p == null) return;
+          p = p.replace(/(都|府|県)$/, "");
+          return p;
+       });
+}
+</script>
+</body>
+</html>
+

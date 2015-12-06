@@ -1,0 +1,26 @@
+<books>
+  <book id="b1000">
+    <title>リンゴの山</title>
+    <author>山田</author>
+    <price value="1500"/>
+    <options>
+      <color>red</color>
+    </options>
+  </book>
+  <book id="b1001">
+    <title>ミカンの歌</title>
+    <author>佐藤</author>
+    <price value="1800"/>
+    <options>
+      <color>orange</color>
+    </options>
+  </book>
+  <book id="b1002">
+    <title>バナナの里</title>
+    <author>市川</author>
+    <price value="2400"/>
+    <options>
+      <color>yellow</color>
+    </options>
+  </book>
+</books>

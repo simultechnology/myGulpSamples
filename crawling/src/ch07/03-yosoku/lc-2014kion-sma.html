@@ -1,0 +1,30 @@
+<html><head>
+  <!-- Google Chartsの取り込み -->
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <!-- 気温データの読込 -->
+  <script type="text/javascript" src="2014kion-sma.js"></script>
+  <script type="text/javascript">
+    // Charts APIの初期化
+    google.load('visualization', '1.1', {packages: ['line']});
+    google.setOnLoadCallback(drawChart);
+    // 実際の描画
+    function drawChart() {
+      // データオブジェクトを作成
+      var data = new google.visualization.DataTable();
+      // データのカラムを指定 ----- (*1)
+      data.addColumn('string', '日付');
+      data.addColumn('number', '平均気温');
+      data.addColumn('number', '移動平均');
+      // 値を設定 ---- (*2)
+      data.addRows(kion_data);
+      // 描画オプション
+      var options = { width: 800, height: 400 };
+      // 描画
+      var chart = new google.charts.Line(
+        document.getElementById('chart'));
+      chart.draw(data, options);
+    }
+  </script>
+</head>
+<body><div id="chart"></div></body>
+</html>

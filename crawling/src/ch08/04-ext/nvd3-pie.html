@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+  <link href="lib/nvd3/nv.d3.css" rel="stylesheet" type="text/css">
+  <script src="lib/d3.min.js"></script>
+  <script src="lib/nvd3/nv.d3.js"></script>
+</head><body>
+<div id="chart"><svg></svg></div>
+<style> #chart text { font-size: 20px; } </style>
+<script>
+// サンプルデータ
+var sample_data = [
+  { "label":"西田", "value":94 },
+  { "label":"鈴木", "value":88 },
+  { "label":"川田", "value":62 },
+  { "label":"佐藤", "value":48 },
+  { "label":"大川", "value":45 },
+  { "label":"政田", "value":22 }
+];
+
+// グラフの描画 --- (*1)
+nv.addGraph( function() {
+  
+  // パイチャートを作る ---- (*2)
+  var chart = nv.models.pieChart()
+    .x(function(d) {
+      return d.label + "(" + d.value + ")";
+    })
+    .y(function(d) { return d.value })
+    .title("人気投票")         // タイトルを指定
+    .showLabels(true)         // ラベルを表示するか
+    .donutLabelsOutside(true) // ラベルを外側に表示するか
+    .padAngle(0.04)           // 各項目のパディング角度
+    .cornerRadius(8)          // 角丸の指定
+    .donut(true);             // ドーナツチャートにするか
+
+  // パイチャートを実際に表示する ---- (*3)
+  d3.select("#chart svg")
+    .style({ "width": "800px", "height": "600px" })
+    .datum(sample_data)
+    .transition().duration(1000)
+    .call(chart);
+  
+  // タイトルサイズの補正
+  d3.select("#chart .nv-pie-title")
+    .style({ "font-size": "50px" });
+
+  return chart;
+} );
+</script>
+</body></html>

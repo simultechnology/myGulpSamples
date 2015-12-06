@@ -1,0 +1,33 @@
+<html><head>
+  <!-- Google Chartsの取り込み -->
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <!-- 気温データの読込 -->
+  <script type="text/javascript" src="2014kion.js"></script>
+  <script type="text/javascript">
+    // Charts APIの初期化
+    google.load('visualization', '1.1', {packages: ['line']});
+    google.setOnLoadCallback(drawChart);
+    // 実際の描画
+    function drawChart() {
+      // データオブジェクトを作成
+      var data = new google.visualization.DataTable();
+      // データのカラムを指定 ----- (*1)
+      data.addColumn('number', 'テストの回数');
+      data.addColumn('number', '英語の点');
+      // データの値を指定 [テストの回数, 英語の点] ---- (*2)
+      data.addRows([
+        [1, 30],[2, 50],[3, 43],[4, 60],[5, 77],
+        [8, 70],[9, 80],[10,87],[11,68],[12,60]
+      ]);
+      // 描画オプション
+      var options = {
+        width: 800, height: 400
+      };
+      // 描画
+      var chart = new google.charts.Line(document.getElementById('chart'));
+      chart.draw(data, options);
+    }
+  </script>
+</head>
+<body><div id="chart"></div></body>
+</html>

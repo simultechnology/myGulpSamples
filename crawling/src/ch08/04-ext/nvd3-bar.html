@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+  <link href="lib/nvd3/nv.d3.css" rel="stylesheet" type="text/css">
+  <script src="lib/d3.min.js"></script>
+  <script src="lib/nvd3/nv.d3.js"></script>
+</head><body>
+<div id="chart"><svg></svg></div>
+<script>
+// CSVを読んでグラフを描画する
+var mikan = null;
+
+// CSVの読み込み --- (*1)
+d3.csv("mikan-sub.csv", function (err, data) {
+  for (var i in data) {
+    data[i].value = parseInt(data[i].value);
+  }
+  mikan = [{"key":"出荷量", "values":data}];
+  // 続いて、グラフの描画
+  nv.addGraph( drawGraph );
+});
+
+function drawGraph() {
+  // バーチャートを作る ---- (*2)
+  var chart = nv.models.discreteBarChart()
+    .x(function(d) { return d.area })
+    .y(function(d) { return d.value })
+    .staggerLabels(true)
+    .margin({"left":100,"right":20,"top":50,"bottom":50})
+    .valueFormat(d3.format(',d'))
+    .showValues(true);
+  
+  chart.yAxis.tickFormat(d3.format(',d')); 
+
+  // 実際に表示する ---- (*3)
+  d3.select("#chart svg")
+    .style({ "width": "800px", "height": "400px" })
+    .datum(mikan)
+    .call(chart);
+  
+  nv.utils.windowResize(chart.update);
+  return chart;
+};
+
+</script>
+</body></html>

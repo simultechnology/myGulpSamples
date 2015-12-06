@@ -1,0 +1,33 @@
+<html><head><meta chartset="utf-8">
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+  // ライブラリの読み込み ---- (*1)
+  google.load('visualization', '1.0', {'packages':['corechart']});
+  google.setOnLoadCallback(drawChart);
+
+  // チャートの描画を行う
+  function drawChart() {
+
+    // データを設定
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', '人物');
+    data.addColumn('number', '獲得票');
+    data.addRows([
+      ['リュウジ',   51], ['コロタ',     34],
+      ['イナクーン', 20], ['サラダー',   11],
+      ['イガタ',      8], ['キョウダ',    4],
+    ]);
+
+    // グラフのオプションを指定
+    var opt = {
+      'title': '人気投票',
+      'width':  600, 'height': 400,
+    };
+    // グラフを表示 ---- (*2)
+    var chart = new google.visualization.BarChart(
+      document.getElementById('chart_div'));
+    chart.draw(data, opt);
+  }
+</script>
+</head><body><div id="chart_div"></div></body></html>
+

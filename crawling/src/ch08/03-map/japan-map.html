@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+.boundary {
+  fill: none;
+  stroke: black;
+  stroke-dasharray: 2, 2;
+  stroke-linejoin: round;
+}
+.place-label {
+  font-size: 9px;
+  fill: yellow;
+}
+</style>
+<body>
+<!-- ライブラリの取り込み -->
+<script src="d3.v3.min.js"></script>
+<script src="topojson.v0.min.js"></script>
+<script>
+// SVG領域を作成 ------ (*1)
+var width = 1024, height = 1024;
+var svg = d3.select("body")
+  .append("svg")
+  .attr({"width":width, "height":height});
+
+// ファイルの読み込み ---- (*2)
+d3.json("japan-topo.json", function(err, map) {
+  // 描画オブジェクトを得る ------ (*3)
+  var geo = map.objects["japan-geo"];
+  var map_o = topojson.object(map, geo);
+  
+  // 縮尺を指定 ----- (*4)
+  var projection = d3.geo.mercator()
+        .center([137, 35])
+        .scale(2000)
+        .translate([width / 2, height / 2]);
+  
+  // パスを作成 ---- (*5)
+  var path = d3.geo.path()
+    .projection(projection);
+
+  // SVGに追加 ---- (*6)
+  svg.append("path")
+     .datum(map_o)
+     .attr("d", path);
+
+  // 色を塗る ---- (*7)
+  svg.selectAll("path").attr("fill", "green");
+
+  // 境界線 ---- (*8)
+  var mesh = topojson.mesh(
+    map, geo, 
+    function(a, b) {
+      return a !== b; 
+    });
+  svg.append("path")
+     .datum(mesh)
+     .attr("d", path)
+     .attr("class", "boundary");
+  
+  // 都道府県名を描画 ---- (*9)
+  svg.selectAll(".place-label")
+     .data(map_o.geometries)
+     .enter()
+       .append("text")
+       .attr("class", function(d) {
+          return "place-label";
+       })
+       .attr("transform", function(d) {
+          return "translate(" + path.centroid(d) + ")";
+       })
+       .text(function(d) {
+          var s = d.properties.name_local;
+          if (!s) return;
+          s = s.replace(/[都府県]$/,""); // ---- (*10)
+          return s;
+       });
+});
+</script>
+</body>
+</html>
+

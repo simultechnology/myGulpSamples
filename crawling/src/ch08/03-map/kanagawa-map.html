@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+.place-label {
+  font-size: 9px;
+  fill: black;
+}
+.area {
+  stroke: black;
+  stroke-dasharray: 4, 4;
+  stroke-linejoin: round;
+}
+</style>
+<body>
+<!-- ライブラリの取り込み -->
+<script src="d3.v3.min.js"></script>
+<script src="topojson.v0.min.js"></script>
+<script>
+
+var width = 1024, height = 800;
+var scale = 60000,
+    cx = 139.345, cy = 35.405;
+
+// SVG領域を作成
+var svg = d3.select("body")
+  .append("svg")
+  .attr({"width":width, "height":height})
+  .style({"border":"1px solid silver"});
+
+// カラーマップの指定 ------- (*1)
+var colors = {
+  "横浜市"  : "#dcd",
+  "川崎市"  : "#ddc",
+  "厚木市"  : "#ddd",
+  "相模原市": "#cdd",
+  "藤沢市"  : "#cdd",
+  "足柄上郡": "#dcd",
+  "足柄下郡": "#dcd",
+  "others"  : "#ddc"
+};
+
+// ファイルの読み込み ---- (*2)
+d3.json("kanagawa-topo.json", function(err, map) {
+  // 描画オブジェクトを得る
+  var geo = map.objects["kanagawa-geo"];
+  var map_o = topojson.object(map, geo);
+  
+  // 縮尺を指定
+  var projection = d3.geo.mercator()
+        .center([cx, cy])
+        .scale(scale)
+        .translate([width / 2, height / 2]);
+  
+  // パスを作成
+  var path = d3.geo.path()
+    .projection(projection);
+
+  // SVGに追加
+  svg.append("path")
+     .datum(map_o)
+     .attr("d", path);
+
+  // 色を塗る ------- (*3)
+  svg.selectAll(".area")
+     .data(map_o.geometries)
+     .enter()
+      .append("path")
+      .attr("class", "area")
+      .attr("fill", function(d) { // ---- (*4)
+        var s = d.properties.N03_003;
+        if (!s) { s = d.properties.N03_004; }
+        if (colors[s] == undefined) {
+          s = "others";
+        }
+        return colors[s]; 
+      })
+      .attr("d", path);
+
+
+  // ラベルを作成 ---- (*5)
+  var labels = {};
+  svg.selectAll(".place-label")
+     .data(map_o.geometries)
+     .enter()
+       .append("g")
+       .attr("transform", function(d) {
+          return "translate(" + path.centroid(d) + ")";
+       })
+       .append("text")
+       .attr("text-anchor", "middle")
+       .attr("class", "place-label")
+       .attr("transform", "rotate(45,0,0)")
+       .text(function(d) {
+          var p = d.properties;
+          var s = "";
+          if (p.N03_003 !== null) s += p.N03_003;
+          if (p.N03_004 !== null) s += p.N03_004;
+          if (s == "") return;
+          if (labels[s] === true) return;
+          labels[s] = true;
+          return s;
+       });
+});
+</script>
+</body>
+</html>
+

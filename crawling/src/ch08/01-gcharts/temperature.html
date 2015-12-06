@@ -1,0 +1,33 @@
+<html><head><meta chartset="utf-8">
+<!-- ライブラリの取り込み -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<!-- 気温データの取り込み -->
+<script type="text/javascript" src="temperature-data.js"></script>
+
+<script type="text/javascript">
+  // ライブラリの読み込み ---- (*1)
+  google.load('visualization', '1.0', {'packages':['corechart']});
+  google.setOnLoadCallback(drawChart);
+
+  // チャートの描画を行う
+  function drawChart() {
+
+    // データを設定 ----- (*2)
+    var data = google.visualization.arrayToDataTable(tempData);
+
+    // グラフのオプションを指定 ---- (*3)
+    var options = {
+      'title': '最高気温と最低気温',
+      'width':  600, 'height': 400,
+      'colors': ['red', 'blue'],
+      'pointShape': 'circle',
+      'pointSize': 5 
+    };
+    // グラフを表示 ---- (*4)
+    var chart = new google.visualization.LineChart(
+      document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+</script>
+</head><body><div id="chart_div"></div></body></html>
+
