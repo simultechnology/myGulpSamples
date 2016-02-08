@@ -1,0 +1,1630 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.fb-page{
+	width: 260px;
+margin-right: 15px;
+float: left;
+}
+/* ------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+共通
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------*/
+
+.wrap{ width:960px; margin:0 auto;position: relative;}
+a{ text-decoration:none; color: #049798; }
+a:hover{filter:alpha(opacity=85);
+    -moz-opacity: 0.85;
+    opacity: 0.85;}
+.red{ color:#CA322D;}
+
+/* float left */
+.fl{
+  float:left;
+}
+
+.fr{
+  float:right;
+}
+
+/* clear fix*/
+.cf {
+  zoom:1;
+}
+.cf:before,
+.cf:after{
+  content:" ";
+  display:block;
+}
+.cf:after{
+  clear:both;
+}
+h3.subtitle{
+
+  position:relative;
+}
+
+h3 .logoIcon{
+  margin-left:-65px;
+margin-top:-14px;
+  position:absolute;
+}
+h3 .logoIcon img{
+  width: 40px;
+  margin-top: 9px;
+  margin-left: 10px;
+  border-radius:3px;
+}
+
+
+input.form_eml{ border:1px solid #DEDEDE; padding:9px 12px;box-shadow:0 2px 3px rgba(0,0,0,0.2) inset; box-sizing:border-box; border-radius:4px;}
+.form_eml.full{ width:100%; margin:5px 0;}
+.form_eml.w50p{ width:48%; margin:5px 0;}
+.form_eml.w30p{ width:31%; margin:5px 0; margin-right:5px; margin-left:5px;}
+.form_eml.w15p{ width:26%; margin:5px 0; margin-right:5px; margin-left:5px;}
+.form_eml.w70p{ width:70%; margin:5px 0; margin-right:5px; margin-left:5px;}
+
+.btnmin {
+    display: inline-block;
+    vertical-align: top;
+    font-family: "Helvetica Neue", Helvetica, Tahoma, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.55em;
+    text-align: center;
+    text-decoration: none;
+    color: #222;
+    -webkit-appearance: none;
+    outline: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: none;
+    cursor: pointer;
+    background: #e0e3e5;
+    padding: 0.9em 0.5em;
+	margin: 5px 0;
+}
+select.select-box01 {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+select.select-box01 {
+padding: 10px;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+border: 1px solid #e3e3e3;
+background: #f3f0f0;
+background: url(arrow01.png) right 50% no-repeat, -webkit-linear-gradient(top, #fff 0%,#f3f0f0 100%);
+background: url(arrow01.png) right 50% no-repeat, linear-gradient(to bottom, #fff 0%,#f3f0f0 100%);
+background-size: 20px, 100%;
+}
+
+.bggreen{
+background-color:#049798;
+color:#fff;
+padding:10px 0;
+}
+.bggreen h2{ color:#fff;}
+
+.logout{
+
+  background-color: #fff;
+  font-size: 12px;
+  line-height: 1.3em;
+  color: #888;
+  border-radius: 3px;
+  margin-top: 10px;
+  display: inline-block;
+  margin-bottom: 15px;
+  }
+
+/* ------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+header
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------*/
+#header{}
+#header h1{
+				  background-color: #049798;
+				  color: #fff;
+				  font-size: 12px;
+				  padding: 5px;
+				  margin-bottom:0;
+                 }
+#header .gray{ background-color:#687173;padding: 16px 0;}
+#header .logo{}
+#header .hnavi{
+				  position: absolute;
+				  left: 300px;
+				  top: 0px;
+				  width: 300px;
+				  }
+#header .hnavi li{ float:left;}
+#header .hnavi .info{ background-image:url(../img/common/icon_info.png); width:133px; height:47px; display:block;margin-right: 14px;position: relative;}
+#header .hnavi .action{ background-image:url(../img/common/icon_action.png); width:133px; height:47px; display:block;position: relative;}
+#header .hnavi li a{
+				  display: block;
+				  padding-left: 47px;
+				  line-height: 47px;
+				  font-weight: bold;
+				  color: #049798
+				  }
+#header .hnavi li .Badge{
+				  position: absolute;
+				  top: -5px;
+				  right: -10px;
+				  background-color: #C41518;
+				  border: 2px solid #fff;
+				  color: #fff;
+				  padding: 2px 5px;
+				  z-index: 1;
+				  line-height: 1.1;
+				  font-size: 12px;
+				  border-radius: 9px;
+				  }
+
+#header .mainbtn{
+				  position: absolute;
+				  top: -39px;
+				  right: 0;
+				  width: 316px;
+				  }
+#header .mainbtn li{
+				  width: 153px;
+				  height: 88px;
+				  float: left;
+				  margin-left: 5px;
+				  }
+#header .mainbtn .productlink{}
+#header .mainbtn .searchlink{}
+
+
+#header .hcopy{
+	position: absolute;
+			  left: 250px;
+			  top: 15px;
+			  width: 900px;
+			  color:#fff;
+				  }
+#header .hcopy span{
+	color:#049798;
+	background-color:#fff;
+	padding:5px 10px;
+	border-radius:3px;}
+#header .hbtn{
+				  position: absolute;
+top: 0px;
+right: 0;
+width: 120px;
+				  }
+#header .hbtn li{
+				  width:52px;
+				  height: 52px;
+				  float: left;
+				  margin-left: 5px;
+				  }
+
+#header #gnavi{ height:60px; border-top:1px solid #ddd;border-bottom:1px solid #ddd;}
+#header #gnavi ul{border-left:1px solid #ccc; height:58px;}
+#header #gnavi li{float: left; border-right:1px solid #ccc;border-left:1px solid #fff; height:58px;}
+#header #gnavi li.grd{ background-image:url(../img/common/navi_bg.png); display:block; height:58px;}
+#header #gnavi li.grd:hover{ background-image:url(../img/common/navi_hover.png);}
+#header #gnavi li.grd.active{ background-image:url(../img/common/navi_on.png); display:block; height:58px;}
+#header #gnavi li.grd a{ padding:0 50px 0 70px; background-position: 40px center; height:58px; display:block;line-height:58px; color:#454545; font-weight:bold}
+#header #gnavi li.home a{ background-image:url(../img/common/icon_home.png); background-repeat:no-repeat;background-position: center center;padding:0 33px 0 33px;}
+#header #gnavi li.fav a{ background-image:url(../img/common/icon_fav.png); background-repeat:no-repeat;}
+#header #gnavi li.sell a{ background-image:url(../img/common/icon_sell.png); background-repeat:no-repeat;}
+#header #gnavi li.buy a{ background-image:url(../img/common/icon_buy.png); background-repeat:no-repeat;}
+#header #gnavi li.other a{padding: 0 23px;line-height: 58px;font-size: 12px;color: #777;}
+
+/* ------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+footer
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------*/
+
+#footer{}
+#footer .gray{ background-color:#687173;padding: 16px 0;}
+#footer .flogo{
+				  width: 120px;
+				  margin-right: 15px;
+				  float: left;
+				  }
+#footer .fnavi{float: right;width: 550px;margin: 0;}
+#footer .fnavi li{ }
+#footer .fnavi li dt{ font-size:16px; color:#fff; margin-bottom:10px;}
+#footer .fnavi li dd{margin-left:0;}
+#footer .fnavi li dd a{ display:block; color:#fff; font-size:12px;}
+#footer .copy{background-color: #049798;color: #fff;text-align: center;padding: 10px 0;font-size: 12px;}
+
+#footer.join .flogo{
+				  width: 120px;
+				  margin-right: auto;
+				  float: none;
+				  margin:0 auto;
+				  display: block;
+				  }
+
+/* ------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+main 1col
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------*/
+
+
+/* ------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+main 2col
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------*/
+
+#right.unit-75 { padding:0;}
+
+
+
+/* ------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+TOPページ
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------*/
+/* タイトル */
+.top h3{
+  font-size: 18px;
+background-color: #727A7C;
+color: #555;
+padding: 10px 14px;
+margin: 25px 0 10px;
+background-image: url(../img/common/navi_bg.png);
+border: 1px solid #ddd;
+border-radius: 3px;
+}
+
+/* ------------------------------------------------------------
+メインイメージ
+------------------------------------------------------------*/
+
+#mainimage{
+	height:430px;
+	position:relative;
+	}
+
+#mainimage .bdwopacty{
+	position:absolute;
+	width:100%;
+	height:100%;
+	left:0;
+	top:0%;
+	margin-top:0px;
+	background-color:rgba(0,0,0,0.6);}
+#teaser{
+  width:100%;
+  height:100%;
+}
+
+#MainVisual{
+  width:100%;
+  height:100%;
+  z-index:0;
+  background-image:url(../img/top/main.png);
+  background-size: contain;
+}
+
+#MainVisualCatch{
+  padding-top:120px;
+  width:60%;
+  float:left;
+}
+.catch{
+  color:#fff;
+  margin-left:0;
+  font-size:17px;
+  line-height: 1.6;
+  margin-top: 25px;
+}
+
+#MainVisualCatch img{
+  width:570px;
+
+}
+
+#teaserEntryForm{
+  margin-left:auto;
+  margin-right:0;
+  max-width:40%;
+  padding-top:60px;
+  float:right;
+  width:35%;
+  margin-bottom:20px;
+}
+
+
+#teaserEntryForm input[type="text"]{
+  font-size:16px;
+  line-height: 22px;
+  padding:7px 10px;
+  border:1px solid #727a7c;
+  width:100%;
+
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+
+}
+
+
+
+/* 登録フォーム */
+.registerForm{
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+
+  box-shadow: 0 0 10px rgba(0,0,0,1);
+}
+
+.registerForm dt.title{
+
+  -webkit-border-radius: 4px 4px 0 0;
+  -moz-border-radius: 4px 4px 0 0;
+  -webkit-border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0;
+
+  border-bottom:1px solid #727a7c;
+
+  background-color:#049798;
+  text-align:center;
+  font-size:20px;
+  padding:14px;
+  letter-spacing:0.1em;
+  color:#fff;
+}
+
+
+.registerForm dt.title img{
+  position:absolute;
+  margin-top :-60px;
+  margin-left:-90px;
+}
+
+.registerForm .inputArea{
+  width:100%;
+}
+
+.registerForm  .buttonArea{
+  padding-top:10px;
+}
+
+.registerForm dd{
+	margin:0;
+	}
+.registerForm dd.actions{
+color:#727a7c;
+background-color:#fff;
+padding:15px;
+font-size:15px;
+border-bottom:1px solid #727a7c;
+margin:0;
+}
+
+
+.registerForm dd.actions dl{
+  font-size:14px;
+  line-height:120%;
+  margin:0 auto;
+  font-weight:bold;
+  padding-bottom:4%;
+
+}
+
+
+.registerForm dd.policy{
+
+  color:#727a7c;
+
+  -webkit-border-radius: 0 0 4px 4px;
+  -moz-border-radius:0 0 4px 4px;
+  -webkit-border-radius:0 0 4px 4px;
+  border-radius:0 0 4px 4px;
+  background-color:#f7f7f7;
+}
+
+
+.registerForm dd.policy{
+}
+
+.actionButton {
+  color: #fff;
+  background: #139192;
+  font-size:22px;
+  -moz-box-shadow: 0px 4px 0px #047267;
+  -o-box-shadow: 0px 4px 0px #047267;
+  -webkit-box-shadow: 0px 4px 0px #047267;
+  box-shadow: 0px 4px 0px #047267;
+
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+
+  text-align:center;
+}
+
+.actionButton:hover {
+  background: #86cbcf;
+  cursor:pointer;
+
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+#confirmRegisterButton{
+  padding: 7px 3%;
+}
+
+.mainDocArea{
+  font-size:13px;
+  color:#727a7c;
+  padding:2%;
+  line-height:100%;
+}
+
+.mainDocArea label{
+  display:block;
+  margin-left:2%;
+  padding-bottom:1%;
+  font-size:12px;
+  line-height:1.4;
+}
+.mainDocArea  .linkArea{
+  margin:0 auto;
+  padding:2%;
+  width:70%;
+}
+.mainDocArea a{
+  color:#727a7c;
+  padding:3%;
+}
+/* error top */
+ul.errorbaloonTop{
+  position: absolute;
+  top: -100px;
+  left: -10%;
+  width:110%;
+  text-align: center;
+  border:3px solid #727a7c;
+
+  box-shadow:2px 2px 4px #727a7c;
+  -webkit-box-shadow:2px 2px 4px #727a7c;
+  -moz-box-shadow:2px 2px 4px #727a7c;
+
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+
+  padding: 1%;
+  font-size : 16px;
+  color:#f00;
+  text-align:left;
+  background-color:#ffe8f8;
+}
+
+ul.errorbaloonTop:before{
+  content : " ";
+  position:absolute;
+  width: 0;
+  height: 0;
+  left: 25px;
+  bottom:-25px;
+  border : 12px solid;
+  border-color: #727a7c transparent transparent  transparent ;
+}
+
+ul.errorbaloonTop:after{
+  content : " ";
+  position: absolute;
+  width: 0;
+  height:0;
+  left: 29px;
+  bottom:-15px;
+  border :8px solid;
+  border-color: #ffe8f8 transparent transparent transparent ;
+}
+
+.errorbaloonTop{
+  display: inline-block;
+  -webkit-transition: 1s linear opacity;
+  -moz-transition: 1s linear opacity;
+  -o-transition: 1s linear opacity;
+  transition: 1s linear opacity;
+  opacity: 1 !important;;
+}
+
+.errorbaloon.ng-hide{
+  opacity: 0 !important;
+}
+
+/* ===  プレスエリア === */
+#pressArea{
+  margin-top: 0%;
+  margin-bottom: 2%;
+  padding: 1%;
+}
+
+#pressArea a{
+  color: #333;
+  font-size: 14px;
+  display: inline-block;
+}
+#pressArea a span{
+  color: #09c
+}
+#pressArea strong{
+  display: inline-block;
+  width: 120px;
+  margin-right:10px;
+}
+#pressArea dl{
+  margin-bottom: 10px;
+  padding-bottom: 7px;
+  border-bottom: 1px dotted #ccc;
+}
+
+#pressArea dt{
+  margin-top:3px;
+  font-size:12px;
+  display: inline-block;
+  width: 100px;
+  font-weight: normal;
+  color: #555;
+}
+
+#pressArea dd{
+  margin-left:0%;
+  display: inline-block;
+  width: 830px;
+}
+
+/* == 中央説明 == */
+.centerDescription{
+ font-size :16px;
+line-height: 1.8;
+color: #555;
+padding:2%;
+/* width:96%!important; */
+margin:15px auto;
+background-color: #ededed;
+border-radius: 4px;
+}
+
+/* === about メタリーエリア ==================== */
+#aboutMetally .centerDescription{
+  width:65%;
+  font-width:bold;
+}
+
+#forBuyerSeller {
+  padding-top:3%;
+}
+
+#forBuyerSeller img{
+
+}
+
+#forBuyerSeller dl{
+}
+
+#forBuyerSeller>div{
+  width:49%;
+  padding 1%;
+}
+
+#forBuyerSeller dt span{
+  font-size:25px;
+  font-weight: bold;
+}
+
+#forBuyerSeller dt{
+  -webkit-border-top-left-radius: 8px;
+  -webkit-border-top-right-radius: 8px;
+  -moz-border-radius-topleft: 8px;
+  -moz-border-radius-topright: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+
+  font-size:17px;
+  text-align:center;
+  color:#fff;
+  padding :2%;
+
+}
+
+#forBuyer dt{
+  background:#4388c8;
+}
+
+#forSeller dt{
+  background:#139192;
+}
+
+#forBuyerSeller dd{
+	margin:0;
+  padding:3%;
+  line-height:160%;
+  font-size:16px;
+  text-align:center;
+
+  color:#858585;
+
+  -webkit-border-bottom-left-radius:8px;
+  -webkit-border-bottom-right-radius: 8px;
+  -moz-border-radius-bottomleft: 8px;
+  -moz-border-radius-bottomright: 8px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+
+  border:1px solid  #727a7c;
+
+}
+
+#forBuyer .icon {
+  width:100%;
+
+  margin-left:0%;
+  margin-top:10px;
+}
+
+#forSeller .icon {
+  width:100%;
+
+  margin-left:0%;
+  margin-top:10px;
+}
+
+/* ------------------------------------------------------------
+カテゴリ
+------------------------------------------------------------*/
+.ct_title{ height:48px; position:relative; width:100%; border-bottom: 3px solid #ddd; line-height:48px;}
+.ct_title .text{ font-size:20px; font-weight:bold; line-height:48px; position:absolute; top:0; left:0; height:48px; color:#049798;border-bottom: 3px solid #049798; background:url(../img/common/arrow_right.png) no-repeat left center; padding-left:20px; padding-right:20px;}
+.ct_title a.link_all{ font-size:14px; line-height:48px; position:absolute; top:0; right:0; height:48px; color:#049798; background:url(../img/common/arrow_right2.png) no-repeat left center; padding-left:18px;}
+.ct_title{}
+
+#categoryList{ margin-top:15px;}
+#categoryList li{ margin-bottom:10px;}
+#categoryList li a{  display:block;text-align:center; color: #049798; font-size:15px; padding: 7px 0; background-image: url(../img/common/navi_bg.png);border: 1px solid #ddd;border-radius: 3px;}
+#categoryList li a:hover{background-image: url(../img/common/navi_hover.png);}
+
+h4.subtitle{
+  padding: 7px 14px;
+  position:relative;
+  background-color:#ebf7f7;
+  color:#444;
+  font-size:18px;
+}
+
+/* ------------------------------------------------------------
+フォーム下
+------------------------------------------------------------*/
+#under_entry{}
+#under_entry #teaserEntryForm{
+  margin-left:auto;
+  margin-right:auto;
+  max-width:90%;
+  padding-top:50px;
+  float:none;
+  width:90%;
+  margin-bottom:20px;
+}
+#under_entry .registerForm{
+  box-shadow: 0 0 4px rgba(0,0,0,0.4);
+}
+#under_entry .registerForm dt.title{
+  text-align:left;
+font-size:20px;
+padding:7px;
+letter-spacing:0.1em;
+color:#fff;
+position: relative;
+padding-left: 50px;
+}
+
+
+#under_entry .registerForm dt.title img{
+  position:absolute;
+  top :-45px;
+  left:-45px;
+  margin:0 !important;
+}
+#under_entry .min3{
+	font-size:17px;
+	color:#555;
+	margin-bottom:5px;
+	}
+#under_entry .registerForm  .buttonArea{
+  padding-top:0px;
+}
+#under_entry #confirmRegisterButton{
+  padding: 5px 3%;
+}
+#under_entry .registerForm .inputArea{
+  width:100%;
+  margin-bottom: 0px;
+}
+#under_entry .actionButton {
+  font-size:17px;
+}
+/* ------------------------------------------------------------
+社長メッセージ
+------------------------------------------------------------*/
+#whyMetally { margin-top:50px;}
+#whyMetally p {
+	margin-top: 1.5%;
+	margin-bottom: 1.5%;
+	font-size: 14px;
+	line-height: 1.8;
+	color: #555;
+	padding: 15px;
+}
+.seo {
+	margin-left: auto;
+	/*margin-right: 120px;*/
+	padding-top: 20px;
+	/*width: 10%;*/
+	text-align: right;
+}
+/* ------------------------------------------------------------
+商品検索
+------------------------------------------------------------*/
+#searchArea{margin: 15px 0;padding-bottom: 15px;border-bottom: 1px solid #ccc;}
+#searchArea input[type="text"]{ width:518px; height:42px; line-height:42px; border:1px solid #DEDEDE; padding-left:10px; background-color:#f9f9f9; color:#444;}
+#searchArea input[type="submit"]{width:68px; height:42px; line-height:42px; border:0px none; background-color:#049798; color:#fff; font-weight:bold;font-size:15px; cursor:pointer }
+#searchArea .detailSearch{width:68px; height:42px; line-height:42px; border:1px solid #BDBEBE;; background-color:#fff; background-image: url(../img/common/navi_bg.png);background-repeat: no-repeat;color:#666; display: inline;margin-left: 10px;padding: 12px 23px; cursor:pointer }
+#searchArea .detailSearch:hover{background-image: url(../img/common/navi_hover.png);}
+
+#searchAreaD{margin: 0px 0;padding-bottom: 0px; padding:10px 0;background-color:#f4f4f4;}
+#searchAreaD input[type="text"]{ width:518px; height:42px; line-height:42px; border:1px solid #DEDEDE; padding-left:10px; background-color:#f9f9f9; color:#444;}
+#searchAreaD input[type="submit"]{width:68px; height:42px; line-height:42px; border:0px none; background-color:#049798; color:#fff; font-weight:bold;font-size:15px; cursor:pointer }
+#searchAreaD .back{display: inline-block;
+margin-right: 240px;}
+
+
+.nav-tabs{background-color:#f4f4f4; padding-top:20px;border-top: 1px solid #ddd;}
+.nav-tabs ul {
+    text-align: center;
+}
+.nav-tabs li {
+    float:none;
+    margin-right: 2px;
+    display: inline-block;
+	font-size: 20px;
+}
+.proimage{float: left;}
+.proimage .navbar{ margin-top:10px;}
+.proimage .navbar li{
+	width: 128px;
+	height:128px;
+	overflow:hidden;
+	margin-right: 5px;
+	}
+.proimage .navbar li a{
+	display:block;
+	width: 128px;
+	height:128px;
+	background-position:center;
+	background-size:100%;
+	}
+
+div.proinfo{padding-left: 425px;}
+div.proinfo h2{ color:#049798;}
+div.proinfo h4{ color:#B70001;}
+div.proinfo dl.plice{margin-bottom:0}
+div.proinfo dl.plice dt{ font-size:15px; color:#666;font-weight:normal;float: left;}
+/*div.proinfo dl.plice dd{ font-size: 15px;color: #444;font-weight: bold;margin-left: 120px;}*/
+div.proinfo dl.plice dd{ font-size: 15px;color: #444;font-weight: bold;margin-left: 200px;}
+div.proinfo .annotation{ font-size: 11px;color: #666}
+div.proinfo .text{ font-size: 13px;
+color: #666;
+margin-top: 20px;
+line-height: 1.6;
+margin-bottom: 20px;}
+div.proinfo .text pre{
+  font-size: 13px;
+  color: #666;
+  line-height: 1.6;
+  width:100%;
+  white-space: pre-wrap;       /* CSS 3 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+div.proinfo .btnArea{background-color: #f1f1f1;
+padding: 10px;
+border-radius: 4px;}
+div.proinfo .btnArea .mitsumori{margin-right: 7px;display: inline-flex;}
+div.proinfo .btnArea .mitsumori > span{
+	background-color: #ce511a;
+	color: #fff;
+	padding: 19px 15px;
+	font-size: 22px;
+	font-weight: bold;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+div.proinfo .btnArea .nowestin{
+	color:#D15E60;
+	font-weight:bold;
+	font-size: 19px;
+	}
+
+.protable{}
+.protable table{}
+.protable table th{background-color: #F9F9F9;border: 1px solid #eee;}
+.protable table td{border: 1px solid #eee; color:#049798;}
+
+.post{background-color: #f1f1f1;
+padding: 20px;
+margin-bottom: 20px;
+border-radius: 6px;
+}
+.post textarea{ width: 100%;
+height:140px;
+border:1px solid #ccc;
+padding:2%;
+margin-top:10px;
+}
+
+.post input[type="submit"]{width: 220px;
+height: 42px;
+line-height: 42px;
+border: 0px none;
+background-color: #D06800;
+color: #fff;
+font-weight: bold;
+font-size: 15px;
+cursor: pointer;
+margin: 15px auto 0;
+display: block; }
+
+.post input[type="button"]{width: 220px;
+height: 42px;
+line-height: 42px;
+border: 0px none;
+background-color: #D06800;
+color: #fff;
+font-weight: bold;
+font-size: 15px;
+cursor: pointer;
+margin: 15px auto 0;
+display: block; }
+
+.post .red{ display:block; text-align:center; font-size:13px; margin:7px;}
+
+
+.comment{}
+.comment li{
+	padding:15px 0;
+	border-bottom:1px solid #ddd;}
+.comment .photo{float: left;
+margin-right: 20px;}
+.comment .text{ color:#666; font-size:13px;}
+
+/* ------------------------------------------------------------
+商品リスト
+------------------------------------------------------------*/
+#listArea{}
+#listArea h2{ font-weight:normal}
+#listArea h2 .elem{ text-align:right;display: inline;float: right;font-size: 15px;color: #555;line-height: 1.5;}
+#listArea ul{ padding:0; margin:0}
+#listArea .one{
+width: 222px;
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 3px;
+float: left;
+margin-right: 10px;
+margin-bottom: 15px;
+}
+#listArea .one.end{margin-right: 0px;}
+#listArea .image{}
+#listArea .title{color:#049798;font-size: 16px;padding-top: 5px;display: block;padding-bottom: 5px;height: 60px;line-height: 1.4}
+#listArea dl.st{width: 30%;float: left; margin-bottom:0}
+#listArea dl.st dt{width: 16px;height: 16px;float: left;}
+#listArea dl.st dd{ font-size:13px; color:#777;}
+#listArea dl.plice{margin-bottom:0}
+#listArea dl.plice dt{ font-size:13px; color:#666; text-align:right; font-weight:normal;}
+#listArea dl.plice dd{ font-size:13px; color:#444; font-weight:bold;text-align: right;}
+
+
+#listArea ul.pager {
+      margin: 30px 0;
+float: left;
+text-align: center;
+width: 100%;
+}
+#listArea ul.pager li {
+      display: inline-block;
+      margin-right: 5px;
+      border: 1px #049798 solid;
+      font-weight: bold;
+}
+#listArea ul.pager li.prev,
+#listArea ul.pager li.next {
+      border: none;
+}
+#listArea ul.pager li a {
+      position: relative;
+      display: block;
+      padding: 3px 8px;
+      color: #049798;
+}
+ul.pager li a:link,
+ul.pager li a:visited {
+      text-decoration: none;
+}
+#listArea ul.pager li a:hover,
+ul.pager li a:active {
+      background-color: #049798;
+      text-decoration: none;
+	  color: #FFFFFF;
+}
+ul.pager li em {
+      display: block;
+      padding: 3px 8px;
+      background: #049798;
+      color: #FFFFFF;
+}
+.list-frame, .frame-end {
+  position: relative;
+  display: inline-block;
+  overflow: hidden; /* 不要部分を消す */
+}
+.list-frame:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 200px;
+  height: auto;
+  background: #B70001;
+  content: "交渉中";
+  text-align: center;
+  color: #fff;
+  font-family: 'Arial';
+  font-weight: bold;
+  padding: 7px 37px 7px 16px;
+  left: -50px;
+  top: 13px;
+  transform: rotate(-42deg);
+  -webkit-transform: rotate(-42deg);
+  -o-transform: rotate(-42deg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+.frame-end:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 200px;
+  height: auto;
+  background: #687173;
+  content: "交渉終了";
+  text-align: center;
+  color: #fff;
+  font-family: 'Arial';
+  font-weight: bold;
+  padding: 7px 37px 7px 16px;
+  left: -50px;
+  top: 13px;
+  transform: rotate(-42deg);
+  -webkit-transform: rotate(-42deg);
+  -o-transform: rotate(-42deg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* ------------------------------------------------------------
+商品リストマイページ
+------------------------------------------------------------*/
+.list #mylistArea{}
+.list #mylistArea h2{ font-weight:normal; padding:12px 0; border-bottom:1px solid #ccc; margin-bottom:10px; font-size:20px;}
+.list #mylistArea h2 .elem{ text-align: right;
+display: inline-block;
+float: none;
+font-size: 17px;
+color: #555;
+line-height: 25px;
+margin-left: 15px;
+}
+.list #mylistArea h2 .change{
+	display: inline-block;
+float: right;
+font-size: 17px;
+color: #555;
+line-height: 25px;
+margin-left: 15px;
+}
+.list #mylistArea h2 .change a{
+	padding: 2px 9px;
+font-size:14px;
+color: #049798;
+display: inline-block;
+margin-right: 8px;
+}
+.list #mylistArea h2 .change a.active{
+	background-color: #049798;
+	color:#fff;
+	}
+.list #mylistArea ul{ padding:0; margin:0}
+.list #mylistArea .one{
+width: 100%;
+padding: 15px 0;
+border-bottom: 1px solid #ddd;
+}
+.list #mylistArea .one.end{margin-right: 0px;}
+.list #mylistArea .image{float: left;margin-right: 15px; width:214px;}
+.list #mylistArea .title{color:#049798;font-size: 17px;padding-top: 5px;display: block;padding-bottom: 5px;line-height: 1.4; font-weight:bold;}
+.list #mylistArea dl.st{width: 30%;float: left; margin-bottom:0}
+.list #mylistArea dl.st dt{width: 16px;height: 16px;float: left;}
+.list #mylistArea dl.st dd{ font-size:13px; color:#777;}
+.list #mylistArea dl.plice{margin-bottom:0}
+.list #mylistArea dl.plice dt{ font-size:13px; color:#666; text-align:right; font-weight:normal;}
+.list #mylistArea dl.plice dd{ font-size:13px; color:#444; font-weight:bold;text-align: right;}
+
+.list #mylistArea .center{float: left;margin-right: 15px; width:430px;}
+
+.list #mylistArea table{margin-bottom:15px;}
+.list #mylistArea table th{background-color: #F9F9F9;border: 1px solid #eee; padding:4px 4px 4px 10px; font-size:12px;}
+.list #mylistArea table td{border: 1px solid #eee; color:#049798; padding:4px 0; text-align:left;font-size:12px;}
+
+.list #mylistArea table.accountTable th,.list #mylistArea table.accountTable2 th{background-color: #F9F9F9;border: 1px solid #eee; padding:8px 4px 8px 10px; font-size:14px;}
+.list #mylistArea table.accountTable td,.list #mylistArea table.accountTable2 td{border: 1px solid #eee; color:#049798; padding:8px; text-align:left;font-size:14px;}
+
+
+.list #mylistArea .cat{
+	color:#777;
+	margin-bottom:15px;
+	}
+.list #mylistArea .right{width:260px; border-left:1px solid #ccc; padding-left:15px;}
+
+.list #mylistArea .right dl{width: 70px;float: left;text-align: center;margin-right: 8px; border:1px solid #ddd; padding:3px;margin-bottom:0}
+.list #mylistArea .right dt{text-align: center; color:#fff; padding:5px 0;}
+.list #mylistArea .right dd{text-align: center; padding-left:0;margin-left:0; color:#777; padding:5px 0;}
+
+.list #mylistArea .right .name{ font-size:15px; color:#555; font-weight:bold;}
+.list #mylistArea .right .nick{ color:#777;margin-bottom:20px;margin-bottom:1.65em}
+.evaluation dt{ background-color:#FFAA00;}
+.exhibit dt{ background-color:#049798;}
+.purchase dt{ background-color:#0497E9;}
+
+.list #mylistArea ul.pager {
+      margin: 30px 0;
+float: left;
+text-align: center;
+width: 100%;
+}
+.list #mylistArea ul.pager li {
+      display: inline-block;
+      margin-right: 5px;
+      border: 1px #049798 solid;
+      font-weight: bold;
+}
+.list #mylistArea ul.pager li.prev,
+.list #mylistArea ul.pager li.next {
+      border: none;
+}
+.list #mylistArea ul.pager li a {
+      position: relative;
+      display: block;
+      padding: 3px 8px;
+      color: #049798;
+}
+ul.pager li a:link,
+ul.pager li a:visited {
+      text-decoration: none;
+}
+.list #mylistArea ul.pager li a:hover,
+ul.pager li a:active {
+      background-color: #049798;
+      text-decoration: none;
+	  color: #FFFFFF;
+}
+ul.pager li em {
+      display: block;
+      padding: 3px 8px;
+      background: #049798;
+      color: #FFFFFF;
+}
+
+/* ------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+登録
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------*/
+
+.jpintitle{ text-align:center; color:#727A7C; font-size:24px; padding:14px 0; box-shadow: 0 0 8px #aaa; border-bottom:1px solid #eee; margin-bottom:20px;}
+.jpintitle .green{ color:#049798; font-size:25px; font-weight:bold;}
+.jpintitle .black{ color:#000; font-size:27px; font-weight:bold;}
+
+
+.joinsec1{ position:relative; height:107px;}
+.joinsec1 h3{ font-size:30px; color:#049798;}
+.joinsec1 p{ color:#444; font-size:13px;}
+.joinsec1 .step{ position:absolute; right:0; top:0px;}
+.joinsec1 .step img{}
+
+
+.formArea{ margin:15px auto 70px; width:640px;}
+.formArea h4{ background-image:url(../img/join/titlebg.png); background-repeat:no-repeat; padding-left:40px; height:30px; line-height:30px; color:#049798; font-size:22px;  display:block; margin-top:15px; margin-bottom:5px;}
+.formArea h4 span{ font-size:14px; color:#FF7A2E; line-height:30px; display:inline-block}
+.formArea h4 span.gray{ font-size:14px; color:#888; line-height:30px; display:inline-block}
+.formArea label{ width:100px; display:inline-block; font-size:16px; color:#555;}
+.formArea .couction{ font-size:12px;}
+.formArea .couction .left{ text-align: left; color:#777}
+.formArea .couction .right{ text-align:right}
+
+.join .btnArea{ text-align:center; margin:15px 0;}
+
+.join select.select-box01 {
+	width: 70%;
+	margin:5px;
+}
+
+.join .login{
+	display:block;
+	width:220px;
+	margin:10px auto 35px;}
+.join .forget{
+	color:#777;
+	display:inline-block;
+	margin-bottom:15px;}
+
+/* ------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+マイページ
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------*/
+
+.mypage{}
+.mypage h3{ font-size:16px;background-color:#727A7C; color:#555; padding:10px 14px; margin:25px 0 10px;background-image: url(../img/common/navi_bg.png);border: 1px solid #ddd;border-radius: 3px;}
+.mypage .list{ margin:0; padding:0px;}
+.mypage .list li{border-bottom: 1px dotted #ccc;
+font-size: 13px;
+padding: 0px;}
+.mypage .list li .icon{}
+.mypage .list li .date{ padding-left:10px; padding-right:10px; color:#777;}
+.mypage .list li .text{}
+
+.mypage .info{ background-color:#EEEFE8}
+.mypage .do{ background-color:#F3EDED}
+.mypage .news{}
+.mypage .do.page{ background-color:#fff}
+.mypage .list.page li{border-bottom: 1px solid #ddd;
+font-size: 13px;
+padding: 0px;}
+.mypage .list li a{ display:block;padding: 8px;}
+.mypage .list li a:hover{
+	background-color:#F9FCEF;
+	box-shadow:0 0 3px #aaa;}
+
+/* ------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+sidebar
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------*/
+
+#sidebar.unit-25 { padding:0;}
+#sidebar .sideblock{margin: 15px 0;}
+#sidebar .sideblock h3{
+						  background-color: #049798;
+						  border: 1px solid ##049798;;
+						  color: #fff;
+						  font-size: 14px;
+						  padding: 8px 14px;
+						  margin-bottom:0;
+						  .border-top-radius(3px);
+						  }
+#sidebar .sideblock ul.lebel1{padding: 0;margin: 0;border: 1px solid #ddd;border-top: 0px;}
+#sidebar .sideblock ul.lebel1 li.l01{ border-bottom:1px solid #ddd; position:relative}
+#sidebar .sideblock ul.lebel1 li.l01 > a{ position:relative; z-index:10; display:block; padding:7px 15px 7px 10px; font-size:13px; color:#888; background-image:url(../img/common/side_arrow.png); background-repeat:no-repeat; background-position:right center;}
+#sidebar .sideblock ul.lebel1 li.l01 a:hover{background-color:#e7f3f3;}
+#sidebar .sideblock ul.lebel2{
+						  display:none;
+						  position: absolute;
+						  left: 217px;
+						  top: 0;
+						  width: 200px;
+						  background-color:#e7f3f3;
+						  padding:7px 0;
+						  z-index:1;
+						  box-shadow: 0 0 2px #aaa;
+						  }
+#sidebar .sideblock ul.lebel2 li{display:block; padding:5px 5px 5px 10px; font-size:13px; color:#049798; border:none;line-height: 1.2; }
+#sidebar .sideblock ul.lebel2 li label{}
+#sidebar .sideblock ul.lebel2 li label input{}
+#sidebar .sideblock ul.lebel2 li a{color:#049798; text-decoration:underline;}
+#sidebar .sideblock ul.lebel2 li a:hover{ font-weight:bold; text-decoration:underline;}
+#sidebar .sideblock .detail{ padding:10px; margin:0;border: 1px solid #ddd;border-top: 0px;}
+#sidebar .sideblock .detail li{border-bottom:1px solid #ddd; padding-bottom:5px; margin-bottom:7px;}
+#sidebar .sideblock ul h4{ margin:0px 0 5px; font-size:13px;color:#049798; padding-left:20px;background-image:url(../img/common/side_arrow.png); background-repeat:no-repeat; background-position:10px center;}
+#sidebar .sideblock ul h4 span{ font-size:12px; color:#777;}
+#sidebar .sideblock .unit-66,#sidebar .sideblock .unit-30,#sidebar .sideblock .unit-100{ padding:0;margin-left: 0%;}
+#sidebar .sideblock .unit-66 select{width: 94%;}
+#sidebar .sideblock .unit-30 select{width: 100%;}
+#sidebar .sideblock .unit-100 select{width: 94%;}
+#sidebar .sideblock .detail .forms-inline-list{ margin-bottom:0}
+#sidebar .sideblock .detail .forms-inline-list li{ border:none; margin-bottom:0; padding-bottom:0; font-size:13px;}
+
+/* ------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+商品登録
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------*/
+
+.pr_form{ margin:25px 0}
+.pr_form li {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    border-bottom: 1px solid #ddd
+}
+
+.pr_form li span {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 25px 15px;
+}
+
+.pr_form .ftitle {
+    width: 180px;
+    font-size: 18px;
+	color:#777;
+}
+.pr_form .ftitle em{
+	font-size:12px;}
+
+.pr_form .fbody {
+    width: 787px;
+    font-size: 14px;
+    color: #444;
+}
+.pr_form .fbody b{
+	font-weight:normal;
+	font-size: 12px;
+	color:#777;}
+
+.pr_form .fbody textarea{
+	height:140px;
+	}
+
+.pr_form .imgInput{
+	width: 184px;
+  float: left;
+  margin-right: 35px;
+  margin-left: 10px;
+}
+
+#file_01,#mask_file_01{
+	display:none;
+}
+
+.fileUploadInput, .fileUploadInputMask{
+	display:none;
+}
+
+
+.pr_form li span .file_mask span{
+	display:block;
+	background-image:url(../img/product/imgselect.png);
+	background-position:left top;
+	height:45px;
+	width:184px;
+	cursor:pointer;
+	margin-top:5px;
+	padding: 0px;
+}
+.file_mask span:hover{
+	background-position:left bottom;
+}
+
+.product .btnArea{ text-align:center; margin:15px 0 15px;}
+
+.completeBtnArea{ padding-top:15px;}
+
+
+/* ===== dialog ====*/
+.dialog{display:none;}
+
+.dialog .dialogErrMsgs{
+  margin:0 auto;
+}
+.dialog .dialogButton{
+  width:15%;
+  margin:0 auto;
+}
+.dialog .dialogMsgs{
+  margin:0 auto;
+}
+
+.err_msgs{
+  background: #FAE3EF;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.err_msgs ul li{
+  color: #CA322D;
+  font-size: 17px;
+  margin:0 auto;
+  width:80%;
+}
+
+/* ===== dialog ====*/
+.previewImg{
+  width:180px;
+  height:180px;
+}
+
+.listImg{
+  width:180px;
+  height:180px;
+}
+
+.thumbImg{
+  width:90px;
+  height:90px;
+}
+
+.thumbImgMiddle{
+  width:128px;
+  height:128px;
+}
+
+.largeImgArea{
+  width:394px;
+  height:394px;
+}
+
+.hide{
+  display:none;
+}
+
+.show{
+  display:block;
+}
+
+.prodimg img{
+  max-width:400px;
+  max-height:400px;
+}
+
+
+/* 会社情報 */
+#corpInfo{
+  margin: 25px auto;
+  color:#666;
+  font-size:14px;
+}
+
+#corpInfo dt{
+  font-size:25px;
+  font-weight:bold;
+}
+
+#corpInfo dd{
+  margin-top:2%;
+  margin-left:0%;
+}
+
+#corpInfo  li{
+  padding:1%;
+  border-bottom:1px solid #ddd;
+}
+
+#corpInfo label{
+  display:inline-block;
+  width:20%;
+}
+
+#corpInfo ul > span{
+}
+
+table..noBorderTable{
+  border:none!important;
+}
+
+table.noBorderTable td{
+  border:none;
+}
+
+/* ガイド */
+
+#guide ul{
+	width:24%;
+	margin-right: 1%!important;
+	float:left;}
+
+#guide h3{ font-size:17px; border:1px solid #eee; padding:7px 12px; background-color:#f4f4f4; border-radius:4px; margin:15px 0}
+
+#guide li h3{ font-size:14px;}
+
+#guide li a{ font-size:13px;}
+
+
+
+#guide h4{ font-weight:normal; margin:25px 0; font-size:28px; color:#555;}
+
+#guide h5{ color:#049798;}
+
+#guide p{ font-size:13px; color:#555;}
+
+#guide strong{ margin-top:15px;}
+
+#guide dt{ font-weight:normal; margin:15px 0 0px; border: 1px solid #ddd; border-bottom:dotted 1px #ddd; padding:7px 12px;}
+
+#guide dd{ margin:0;border: 1px solid #ddd; border-top:none 0px #ddd; padding:7px 12px; background-color:#fafafa; font-size:13px; color:#555;}
+
+#guide .q{ font-size:18px; padding-right:15px;}
+
+
+#useredit th,#useredit td{ padding:7px 10px;}
+
+#useredit input[type="text"], #useredit input[type="password"],{
+	border: 1px solid #DEDEDE;
+padding: 6px 10px;
+box-shadow: 0 2px 2px rgba(0,0,0,0.1) inset;
+box-sizing: border-box;
+border-radius: 2px;
+}
+
+#confirmButtion{
+	vertical-align: top;
+font-family: "Helvetica Neue",Helvetica,Tahoma,sans-serif;
+font-size: 1em;
+font-weight: 400;
+line-height: 1.65em;
+text-align: center;
+text-decoration: none;
+color: #fff;
+-webkit-appearance: none;
+outline: 0;
+border: 0;
+border-radius: 2px;
+box-shadow: none;
+cursor: pointer;
+background: #e0e3e5;
+padding: .55em 2.5em;
+	display:block;
+width:220px;
+margin:10px auto 35px;
+background: #049798;
+}
+
+
+#auth{ padding:100px 0 0; font-size:14px; color:#555;}
+#auth h3{ color:#049798; margin-bottom:30px; font-size:20px;}
+#auth h3.erre{ color:#A63436;}
+
+.sampletext{
+	font-size: 12px;
+	color: #676767;
+	padding:10px 0;}
+
+/* ------------------------------------------------------------
+買い取り業者ページ
+------------------------------------------------------------*/
+
+.buyerUpper h1 {
+  color:#049798;
+  margin: 40px 0;
+}
+.buyerUpper h1 span {
+  color: #D06800;
+  font-weight: normal;
+  margin-left: 20px;
+}
+
+.priceArea {
+  overflow: hidden;
+}
+
+.pricePanel {
+  width: 32%;
+  float: left;
+  background-color: #E7F5F5;
+  margin: 1%;
+  text-align: center;
+}
+
+.pricePanel:first-child {
+  margin-left: 0;
+}
+.pricePanel:last-child {
+  margin-right: 0;
+}
+
+.pricePanel > div {
+  margin: 10px 0;
+}
+
+.pricePanel .purchaseCategory {
+  color: #777777;
+  font-size: 12px;
+  margin-bottom: -5px;
+}
+
+.pricePanel .purchaseName {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.pricePanel .purchasePrice {
+  color: #D06800;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.buyerBtnArea{
+  text-align: center;
+  margin: 30px 0;
+}
+.innerBtnArea {
+  display: inline-block;
+  background-color: #EEF6FE;
+  padding: 10px;
+  border-radius: 4px;
+}
+.buyerBtnArea a {margin: 0 2px;display: inline-flex;}
+.buyerBtnArea a > span{
+  color: #fff;
+  padding: 19px 15px;
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  min-width: 300px;
+}
+
+.bg-orange {
+  background-color: #ce511a;
+}
+.bg-blue {
+  background-color: #1379B7;
+}
+
+.buyerLow div.proinfo h2 {
+  font-size: 2.25em;
+}
+.buyerLow div.proinfo .text pre {
+  font-size: 15px;
+}
+
+.categoryArea {
+  clear: both;
+}

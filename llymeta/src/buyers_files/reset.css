@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+/* Reset
+------------------------------------------------------------*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,input,textarea,p,blockquote,th,td {
+	margin: 0;
+	padding: 0;
+}
+address,em { font-style: normal; }/* 斜体字矯正---*/
+th { font-weight: normal; }/* 太字---*/
+/*table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}*/
+th { text-align: left;}
+hr,legend { display: none;}/* 横罫線消去---*/
+h1,h2,h3,h4,h5,h6 { font-size: 100%; font-weight: normal;}/* フォントサイズ統一---*/
+img,fieldset { border: 0;}/* 枠線消去---*/
+img {
+	vertical-align: bottom;}/* 画像の配置（ベースラインからボトムへ）---*/
+
+li { list-style-type: none;}/* リスト---*/
+
+textarea {
+    resize: none;
+}
+
+
+/* Fonts（サイズ・種類）
+------------------------------------------------------------*/
+body {
+
+	font-family: "ＭＳ Ｐゴシック","MS PGothic","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",メイリオ, Meiryo,Sans-Serif;
+}
+
+/* clearfix（float解除用）
+------------------------------------------------------------*/
+.clearfix:after {
+	content: '';
+	display: block;
+	clear: both;
+	height:0;
+}
+.clearfix { /zoom: 1; } /* IE */
+.clear {
+	clear: both;
+}
+.hide #contents #kanren .sec1 .no-ruby {
+  margin-top: 16px;
+}
+.hide #contents #kanren .sec1 .ruby-2 {
+  margin-top: 12px;
+}
+.hide #contents #kanren .sec1 .g-content {
+  width: 265px;
+  height: 320px;
+  padding: 20px;
+}
