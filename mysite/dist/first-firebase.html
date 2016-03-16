@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+  <title></title>
+</head>
+<body>
+  firebase sample!
+
+  <script src="js/app.js"></script>
+<script>
+  var dataStore = new Firebase('https://incandescent-heat-946.firebaseio.com/');
+
+  function dataPush() {
+    dataStore.child('messages').push({
+      'message': 'こんにちは'
+    });
+  }
+
+  setTimeout(dataPush, 1000);
+  setTimeout(dataPush, 2000);
+  setTimeout(dataPush, 3000);
+
+  dataStore.child('messages').on('child_added', function(dataSnapshot) {
+    //ノードが追加された場合のコールバック処理
+    console.log(dataSnapshot);
+  });
+
+</script>
+</body>
+</html>

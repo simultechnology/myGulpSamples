@@ -11,7 +11,8 @@ if (!fs.existsSync(savedir)) {    // --- (※2)
 }
 
 // HTMLファイルの指定
-var url = "http://ja.wikipedia.org/wiki/イヌ";
+//var url = "http://ja.wikipedia.org/wiki/イヌ";
+var url = "https://ja.wikipedia.org/wiki/" + encodeURIComponent("イヌ");
 var param = {};
 // HTMLファイルの取得 --- (※4)
 client.fetch(url, param, function(err, $, res) {
